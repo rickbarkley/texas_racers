@@ -1,4 +1,7 @@
 TexasRacers::Application.routes.draw do
+  resources :races
+
+
   resources :posts
   resources :pages
   

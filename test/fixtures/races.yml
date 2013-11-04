@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  race_name: MyString
+  date: 
+  location: MyString
+  website: MyString
+  distance: MyString
+  city: MyString
+  description: MyString
+
+two:
+  race_name: MyString
+  date: 
+  location: MyString
+  website: MyString
+  distance: MyString
+  city: MyString
+  description: MyString
