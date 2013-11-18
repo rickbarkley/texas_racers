@@ -1,4 +1,17 @@
 TexasRacers::Application.routes.draw do
+  devise_for :members
+
+  devise_for :users
+
+  resources :users
+
+
+  resources :wods
+
+
+  resources :comments
+
+
   resources :races
 
 
@@ -8,7 +21,7 @@ TexasRacers::Application.routes.draw do
   match '/about', :to => 'pages#about'
     match '/contact', :to => 'pages#contact'
 
-root :to => 'pages#home'
+root :to => 'races#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
