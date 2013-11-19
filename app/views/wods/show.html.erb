@@ -2,12 +2,12 @@
 
 <p>
   <b>Work out:</b>
-  <%= @wod.work_out %>
+  <%=h @wod.work_out.html_safe %>
 </p>
 
 <p>
   <b>Comments:</b>
-  <%= @wod.comments %>
+  <%=h @wod.description.html_safe %>
 </p>
 
 

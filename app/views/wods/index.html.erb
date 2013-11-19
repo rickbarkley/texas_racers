@@ -4,12 +4,12 @@
 
 <% @wods.each do |wod| %>
 
-<h3>Work Out | <%= wod.created_at %></h3><br />
+<h3>Work Out | <%= wod.created_at.strftime("%B %d, %Y") %></h3><br />
 
     <p><b>Work Out: </b></p>
-	<p> <%= wod.work_out %></p><br />
+	<p> <%=h wod.work_out.html_safe %></p><br />
     <p><b>Description/Details: </b></p>
-	<p>	<%= wod.description %></p>
+	<p>	<%=h wod.description.html_safe %></p>
 	
 	  <% if user_signed_in? %>
 		<% if current_user.has_role? :admin %>
