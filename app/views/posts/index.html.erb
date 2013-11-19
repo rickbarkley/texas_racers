@@ -6,18 +6,8 @@
 <p>	<%= @post.message %> </p>
 
 
-		  <% if user_signed_in? %>
-			<% if current_user.has_role? :admin %>
-          <%= link_to "Edit", edit_post_path(post), :class => 'btn btn-mini' %>
-          <%= link_to "Delete", post_path(post),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-<% end %>
-<% end %>
-<% end %>
 
-  </tbody>
-</table>
+
 <% if user_signed_in? %>
 	<% if current_user.has_role? :admin %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
