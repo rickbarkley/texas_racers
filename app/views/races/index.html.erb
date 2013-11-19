@@ -14,7 +14,7 @@
      <h4> <%= race.date.strftime("%B %d, %Y") %> | <%= link_to race.race_name, race_path(race) %></h4>
        
         <p><b>Race Location: </b> <%= race.location %></p>
-   		<p><b>Race Type: </b> <%= race.type %> | <%= race.distance %></p>
+   		<p><b>Race Type: </b> <%= race.race_type %> | <%= race.distance %></p>
         <%= link_to race.website %>
 
 	  <% if user_signed_in? %>

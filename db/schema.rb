@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131119154750) do
+ActiveRecord::Schema.define(:version => 20131119164412) do
 
   create_table "comments", :force => true do |t|
     t.string   "user_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20131119154750) do
     t.datetime "updated_at",  :null => false
     t.string   "trf_rating"
     t.string   "type"
+    t.string   "race_type"
   end
 
   create_table "roles", :force => true do |t|
