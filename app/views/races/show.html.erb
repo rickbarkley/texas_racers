@@ -15,13 +15,13 @@
   <dt><strong><%= model_class.human_attribute_name(:distance) %>:</strong></dt>
   <dd><%= @race.distance %></dd>
   <dt><strong><%= model_class.human_attribute_name(:race_type) %>:</strong></dt>
-  <dd><%= @race.distance %></dd>
+  <dd><%= @race.race_type %></dd>
   <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
   <dd><%= @race.city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @race.description %></dd>
 </dl>
-
+race
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               races_path, :class => 'btn'  %>
