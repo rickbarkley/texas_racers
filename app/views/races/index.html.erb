@@ -15,7 +15,7 @@
        
         <p><b>Race Location: </b> <%= race.location %></p>
    		<p><b>Race Type: </b> <%= race.distance %></p>
-        <%= race.website %>
+        <%= link_to race.website %>
 
 	  <% if user_signed_in? %>
 		<% if current_user.has_role? :admin %>

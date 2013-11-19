@@ -12,6 +12,12 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:type, [['Triathlon', 'Triathlon'],['Road Running', 'Road Running'],['Trail Running','Trail Running'],['Fun Run','Fun Run'],['Obstacle Race','Obstacle Race'],['Olympic''Olympic']['Ironman','Ironman']]) %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :location, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :location, :class => 'text_field' %>
@@ -26,7 +32,7 @@
   <div class="control-group">
     <%= f.label :distance, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :distance, :class => 'text_field' %>
+      <%= f.select(:distance, [['1k', '1k'],['5k', '5k'],['10k','10k'],['Marathon/Half Marathon','Marathon/Half Marathon'],['Sprint','Sprint'],['Olympic''Olympic']['Ironman','Ironman'],['Ultra Marathon', 'Ultra Marathon']]) %>
     </div>
   </div>
   <div class="control-group">
