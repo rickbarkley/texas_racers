@@ -1,25 +1,29 @@
-<h1>Listing wods</h1>
+<h1>Work Out of the Day</h1><br /><br />
 
-<table>
-  <tr>
-    <th>Work out</th>
-    <th>Comments</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+
 
 <% @wods.each do |wod| %>
-  <tr>
-    <td><%= wod.work_out %></td>
-    <td><%= wod.comments %></td>
-    <td><%= link_to 'Show', wod %></td>
-    <td><%= link_to 'Edit', edit_wod_path(wod) %></td>
-    <td><%= link_to 'Destroy', wod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+<h3>Work Out | <%= wod.created_at %></h3><br />
+
+    <p><b>Work Out: </b></p>
+	<p> <%= wod.work_out %></p><br />
+    <p><b>Description/Details: </b></p>
+	<p>	<%= wod.description %></p>
+	
+	  <% if user_signed_in? %>
+		<% if current_user.has_role? :admin %>
+    <%= link_to 'Show', wod %>
+    <%= link_to 'Edit', edit_wod_path(wod) %>
+   <%= link_to 'Destroy', wod, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-</table>
+<% end %>
+<% end %>
+
 
 <br />
-
-<%= link_to 'New Wod', new_wod_path %>
+<% if user_signed_in? %>
+	<% if current_user.has_role? :admin %>
+<%= link_to 'New Work Out', new_wod_path %>
+<% end %>
+<% end %>

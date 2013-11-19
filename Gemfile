@@ -12,6 +12,7 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'rolify'
 gem 'cancan'
+gem 'ransack'
 
 # Gems used only for assets and not required
 # in production environments by default.

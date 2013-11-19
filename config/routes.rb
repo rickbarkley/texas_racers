@@ -1,4 +1,7 @@
 TexasRacers::Application.routes.draw do
+  resources :communities
+
+
   devise_for :members
 
   devise_for :users
