@@ -15,7 +15,12 @@
        
         <p><b>Race Location: </b> <%= race.location %></p>
    		<p><b>Race Type: </b> <%= race.race_type %> | <%= race.distance %></p>
-        <%= link_to race.website %>
+        <p><%= link_to race.website %></p>
+	  <em><i>Recommend Race
+		| <%= pluralize race.reputation_for(:votes).to_i, "vote" %>
+	    | <%= link_to "up", vote_race_path(race, type: "up"), method: "post", :class => 'btn btn-mini'  %>
+	    | <%= link_to "down", vote_race_path(race, type: "down"), method: "post", :class => 'btn btn-mini btn-danger' %><br /></i>
+	  </em>
 
 	  <% if user_signed_in? %>
 		<% if current_user.has_role? :admin %>
@@ -26,6 +31,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+<hr>
 <% end %>
 <% end %>
     <% end %>

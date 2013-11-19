@@ -15,7 +15,10 @@ TexasRacers::Application.routes.draw do
   resources :comments
 
 
-  resources :races
+  resources :races do
+    member { post :vote }
+      end
+    
 
 
   resources :posts

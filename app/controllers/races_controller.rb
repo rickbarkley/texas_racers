@@ -1,8 +1,16 @@
 class RacesController < ApplicationController
   # GET /races
   # GET /races.json
+  
+  def vote
+    value = params[:type] == "up" ? 1 : -1
+    @race = Race.find(params[:id])
+    @race.add_or_update_evaluation(:votes, value, current_user)
+    redirect_to :back, notice: "Thank you for voting!"
+  end
+  
   def index
-    @races = Race.all
+    @races = Race.find_with_reputation(:votes, :all, order: 'votes desc')
 
     respond_to do |format|
       format.html # index.html.erb
