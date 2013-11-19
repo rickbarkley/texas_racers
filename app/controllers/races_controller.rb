@@ -13,7 +13,9 @@ class RacesController < ApplicationController
   end
   
   def index
-    @races = Race.find_with_reputation(:votes, :all, order: 'votes desc')
+
+    @q = Race.search(params[:q])
+    @races = @q.result(distinct: true).find_with_reputation(:votes, :all, order: 'votes desc')
 
     respond_to do |format|
       format.html # index.html.erb
