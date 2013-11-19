@@ -18,8 +18,8 @@
 		<%= f.select(:distance_eq, [['1k', '1k'],['5k', '5k'],['10k','10k'],['1k, 5k, & 10k','1k, 5k, & 10k'],['1-5 Mile','1-5 Mile'],['5-10 Mile','5-10 Mile'],['10-15 Mile', '10-15 Mile'],['Marathon/Half Marathon','Marathon/Half Marathon'],['Sprint','Sprint'],['Olympic','Olympic'],['Ironman','Ironman'],['Ultra Marathon', 'Ultra Marathon']],{ :prompt => "Choose a Distance"}) %>
 		</div>
 		<div class="searches span3">
-			  <%= f.submit class: "btn btn-primary" %><br />
-			<%= link_to "Start Over", races_path, class: "btn btn-primary" %></p><br /><br />
+			  <p><%= f.submit class: "btn btn-primary" %></p>
+			<p><%= link_to "Start Over", races_path %></p><br /><br />
 			</div>
 <% end %>
     <% @races.each do |race| %>
