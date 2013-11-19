@@ -3,14 +3,8 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:message) %>:</strong></dt>
-  <dd><%= @post.message %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @post.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @post.user_id %></dd>
-</dl>
+<h3><center><%= @post.title %></center>/h3></br />
+<p>	<%= @post.message %> </p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
