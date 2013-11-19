@@ -1,12 +1,15 @@
 class RacesController < ApplicationController
+    before_filter :authenticate_user!, :only => [:new, :edit, :vote]
   # GET /races
   # GET /races.json
   
   def vote
+ 
     value = params[:type] == "up" ? 1 : -1
     @race = Race.find(params[:id])
     @race.add_or_update_evaluation(:votes, value, current_user)
     redirect_to :back, notice: "Thank you for voting!"
+    
   end
   
   def index
