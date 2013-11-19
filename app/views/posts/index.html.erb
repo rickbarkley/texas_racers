@@ -5,7 +5,7 @@
   <% @posts.each do |post| %>
 <h3><center><%= post.title %></center></h3></br />
 <p>	<%= post.message %> </p>
-<% end %>
+
 
 		  <% if user_signed_in? %>
 			<% if current_user.has_role? :admin %>
@@ -19,7 +19,7 @@
         
 <% end %>
 <% end %>
-
+<% end %>
 <% if user_signed_in? %>
 	<% if current_user.has_role? :admin %>
 <%= link_to t('.new', :default => t("helpers.links.new")),

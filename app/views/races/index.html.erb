@@ -14,8 +14,8 @@
      <h4> <%= race.date.strftime("%B %d, %Y") %> | <%= link_to race.race_name, race_path(race) %></h4>
        
         <p><b>Race Location: </b> <%= race.location %></p>
-   		<p><b>Race Type: </b> <%= race.race_type %> | <%= race.distance %></p>
-        <p><%= link_to race.website %></p>
+   		<p><b>Race Type: </b> <%= race.race_type %> | <%= race.distance %></p><%= link_to "More Info", race_path(race), :class => 'btn btn-primary' %>
+        <p><a href="<%= race.website %>">Click to go to Official Race Website</a></p>
 	  <em><i>Recommend Race
 		| <%= pluralize race.reputation_for(:votes).to_i, "vote" %>
 	    | <%= link_to "up", vote_race_path(race, type: "up"), method: "post", :class => 'btn btn-mini'  %>
