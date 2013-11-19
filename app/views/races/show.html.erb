@@ -19,7 +19,7 @@
   <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
   <dd><%= @race.city %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @race.description %></dd>
+  <dd><%=h @race.description.html_safe %></dd>
 </dl>
 race
 <div class="form-actions">

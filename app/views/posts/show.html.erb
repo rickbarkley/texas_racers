@@ -3,8 +3,9 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<h3><center><%= @post.title %></center>/h3></br />
-<p>	<%= @post.message %> </p>
+<h3><center><%= @post.title %></center></h3></br />
+<p>	<%=h @post.message.html_safe %> </p>
+<p>By <i><%= @post.poster %> | <%= @post.created_at.strftime("%B %d, %Y") %></i></p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

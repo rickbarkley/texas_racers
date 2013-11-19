@@ -4,7 +4,8 @@
 </div>
   <% @posts.each do |post| %>
 <h3><center><%= post.title %></center></h3></br />
-<p>	<%= post.message %> </p>
+<p>	<%=h post.message.html_safe %> </p>
+<p>By <i><%= @post.poster %> | <%= @post.created_at.strftime("%B %d, %Y") %></i></p>
 
 
 		  <% if user_signed_in? %>
@@ -16,7 +17,7 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
-        
+    <hr>    
 <% end %>
 <% end %>
 <% end %>
