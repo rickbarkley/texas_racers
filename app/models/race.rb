@@ -1,3 +1,3 @@
 class Race < ActiveRecord::Base
-  attr_accessible :city, :date, :description, :distance, :location, :race_name, :website
+  attr_accessible :city, :date, :description, :distance, :location, :race_name, :website, :type
 end
