@@ -5,7 +5,7 @@
   <% @posts.each do |post| %>
 <h3><center><%= post.title %></center></h3></br />
 <p>	<%=h post.message.html_safe %> </p>
-<p>By <i><%= @post.poster %> | <%= @post.created_at.strftime("%B %d, %Y") %></i></p>
+<p>By <i><%= @post.poster_string %> | <%= @post.created_at.strftime("%B %d, %Y") %></i></p>
 
 
 		  <% if user_signed_in? %>

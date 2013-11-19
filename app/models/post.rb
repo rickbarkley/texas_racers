@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-  attr_accessible :post, :user_id, :title, :message, :poster
+  attr_accessible :post, :user_id, :title, :message, :poster_string
 end

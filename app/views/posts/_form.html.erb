@@ -14,9 +14,9 @@ f<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
   </div>
 
   <div class="control-group">
-    <%= f.label :poster, :class => 'control-label' %>
+    <%= f.label "Name", :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :poster, :class => 'text_field' %>
+      <%= f.text_field :poster_string, :class => 'text_field' %>
     </div>
   </div>
 
