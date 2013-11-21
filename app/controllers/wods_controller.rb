@@ -2,7 +2,7 @@ class WodsController < ApplicationController
   # GET /wods
   # GET /wods.json
   def index
-    @wods = Wod.paginate(:page => params[:page], :per_page => 12)
+    @wods = Wod.order('created_at DESC').reverse.paginate(:page => params[:page], :per_page => 12)
 
     respond_to do |format|
       format.html # index.html.erb
