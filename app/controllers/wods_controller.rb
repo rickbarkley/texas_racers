@@ -2,7 +2,7 @@ class WodsController < ApplicationController
   # GET /wods
   # GET /wods.json
   def index
-    @wods = Wod.order('created_at DESC').reverse
+    @wods = Wod.order('created_at DESC')
 
     respond_to do |format|
       format.html # index.html.erb
