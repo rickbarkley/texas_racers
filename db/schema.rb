@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131119212612) do
+ActiveRecord::Schema.define(:version => 20131121043458) do
 
   create_table "comments", :force => true do |t|
     t.string   "user_id"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(:version => 20131119212612) do
     t.string   "trf_rating"
     t.string   "type"
     t.string   "race_type"
+    t.string   "month"
   end
 
   create_table "roles", :force => true do |t|
